@@ -2,9 +2,17 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+import os
+import gdown
 
 # Load model
-model = tf.keras.models.load_model("pneumonia_model.keras")
+MODEL_PATH = "pneumonia_model.keras"
+
+if not os.path.exists(MODEL_PATH):
+    url = "https://drive.google.com/uc?id=1K1A378amAI-kNVsUh9zoiQm486XvL-RU"
+    gdown.download(url, MODEL_PATH, quiet=False)
+
+model = tf.keras.models.load_model(MODEL_PATH)
 
 st.title("🫁 Pneumonia Detection using Chest X-ray")
 
