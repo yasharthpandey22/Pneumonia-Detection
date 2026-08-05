@@ -1,7 +1,7 @@
-streamlitstreamlit==1.39.0
+streamlit==1.39.0
 tensorflow==2.16.1
-keras==3.3.3
 numpy
 Pillow
 h5py
+keras
 gdown
